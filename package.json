@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/uKaigo/zuraaa.js#readme",
   "scripts": {
-    "publish": "tsc && npm publish"
+    "build": "tsc"
   },
   "keywords": [
     "api-wrapper",
