@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "outDir": "./dist"
+  },
+  "ts-node": {
+    "files": true
+  },
+  "files": [
+    "src/index.ts",
+    "src/types.d.ts"
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/**/*"]
+}
