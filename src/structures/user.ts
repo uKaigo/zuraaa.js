@@ -3,6 +3,7 @@ import Users from '../endpoints/users'
 
 export interface UserDetails {
   description: string
+  role?: number
 }
 
 export interface UserDates {

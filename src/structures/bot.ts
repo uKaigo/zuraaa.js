@@ -1,5 +1,6 @@
 export interface BotDates {
   sent: string
+  approved: string
 }
 
 export interface BotDetails {
@@ -12,6 +13,7 @@ export interface BotDetails {
   longDescription?: string
   htmlDescription: string
   website: string
+  isHTML: string
   supportServer: string
   customURL?: string
 }
@@ -28,9 +30,11 @@ export interface BotData {
   discriminator: string
   avatar?: string
   status: string
+  approvedBy: string
   dates: BotDates
   details: BotDetails
   votes: BotVotes
+  count: object
 }
 
 export default class Bot {
@@ -44,6 +48,8 @@ export default class Bot {
   dates: BotDates
   details: BotDetails
   votes: BotVotes
+  approvedBy: string
+  count: object
 
   constructor (data: BotData) {
     this.id = data._id
@@ -55,5 +61,7 @@ export default class Bot {
     this.dates = data.dates
     this.details = data.details
     this.votes = data.votes
+    this.approvedBy = data.approvedBy
+    this.count = data.count
   }
 }
