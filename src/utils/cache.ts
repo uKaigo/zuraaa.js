@@ -1,7 +1,9 @@
+import { IncomingMessage } from 'http'
+
 export default class HTTPCache {
   private max: number
   private map: { [id: string]: number }
-  private container: [string, any][]
+  private container: [string, IncomingMessage][]
 
   constructor (maxSize: number = 100) {
     this.max = maxSize
@@ -17,7 +19,7 @@ export default class HTTPCache {
     }
   }
 
-  get (id: string) {
+  get (id: string): IncomingMessage | null {
     if (id in this.map) {
       const val = this.container[this.map[id]]
 
@@ -32,12 +34,12 @@ export default class HTTPCache {
     return null
   }
 
-  private _insert (id: string, value: any) {
+  private _insert (id: string, value: IncomingMessage) {
     this.container.unshift([id, value])
     this.reallocate()
   }
 
-  insert (id: string, value: any) {
+  insert (id: string, value: IncomingMessage): void {
     if (id in this.map) {
       this.get(id)
       return
