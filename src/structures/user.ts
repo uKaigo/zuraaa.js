@@ -39,6 +39,7 @@ export default class User {
     this.avatar = data.avatar
     this.dates = data.dates
     this.details = data.details
+
     this.endpoint = endpoint
   }
 

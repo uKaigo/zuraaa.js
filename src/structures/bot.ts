@@ -1,3 +1,5 @@
+import User from './user'
+
 export interface BotDates {
   sent: string
   approved: string
@@ -39,7 +41,7 @@ export interface BotData {
 
 export default class Bot {
   id: string
-  owner: string
+  owner: User | string
   username: string
   discriminator: string
   tag: string
@@ -51,9 +53,8 @@ export default class Bot {
   approvedBy: string
   count: object
 
-  constructor (data: BotData) {
+  constructor (data: BotData, owner?: User) {
     this.id = data._id
-    this.owner = data.owner
     this.username = data.username
     this.discriminator = data.discriminator
     this.tag = `${this.username}#${this.discriminator}`
@@ -63,5 +64,6 @@ export default class Bot {
     this.votes = data.votes
     this.approvedBy = data.approvedBy
     this.count = data.count
+    this.owner = owner || data.owner
   }
 }

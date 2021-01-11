@@ -9,9 +9,14 @@ export default class Users extends Endpoint {
     return new User(data, this)
   }
 
-  async getBots (id: string) {
+  async getBots (id: string, fetchOwner = true) {
+    let owner: User
+    if (fetchOwner) {
+      owner = await this.get(id)
+    }
+
     const data: BotData[] = await this.request('GET', `users/${id}/bots`)
 
-    return data.map(bot => new Bot(bot))
+    return data.map(bot => new Bot(bot, owner))
   }
 }
