@@ -9,8 +9,8 @@ export default class Client {
   users: Users
   bots: Bots
 
-  constructor (options: ClientOptions) {
-    this.users = new Users(this, options.cacheSize)
-    this.bots = new Bots(this, options.cacheSize)
+  constructor (options?: ClientOptions) {
+    this.users = new Users(this, options?.cacheSize)
+    this.bots = new Bots(this, options?.cacheSize)
   }
 }
