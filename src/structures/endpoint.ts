@@ -19,8 +19,7 @@ export default class Endpoint {
 
     const res =
       cached ||
-      (await centra(`${this.BASE}/${path}`, method)
-        .toUpperCase()
+      (await centra(`${this.BASE}/${path}`, method.toUpperCase())
         .header('User-Agent', 'zuraaa.js (https://github.com/uKaigo/zuraaa.js)')
         .header('X-Powered-By', 'NodeJS | @aero/centra')
         .send())
