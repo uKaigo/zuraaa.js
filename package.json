@@ -1,8 +1,11 @@
 {
   "name": "zuraaa.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Uma wrapper assincrona para api do zuraaa.com",
   "main": "lib/index.js",
+  "scripts": {
+    "publish": "tsc && npm publish"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/uKaigo/zuraaa.js"
