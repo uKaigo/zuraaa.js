@@ -4,7 +4,7 @@ import HTTPCache from '../utils/cache'
 import { NotFound } from '../errors'
 
 export default class Endpoint {
-  protected BASE = 'https://www.zuraaa.com/api'
+  protected BASE = 'https://api.zuraaa.com'
   protected client: Client
   protected cache: HTTPCache
 
