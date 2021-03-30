@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "lib": ["esnext"],
+    "target": "es2020", // Versão que o NODE v14 (lts) está usando.
+    "lib": ["es2020"],
     "module": "commonjs",
     "allowJs": true,
     "moduleResolution": "node",
@@ -12,9 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "outDir": "./lib"
-  },
-  "ts-node": {
-    "files": true
   },
   "files": [
     "src/index.ts",
