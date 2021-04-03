@@ -21,13 +21,21 @@ export interface UserData {
   details: UserDetails
 }
 
+/** Representa um usuário do Zuraaa. */
 export default class User {
+  /** O ID do usuário. */
   id: string
+  /** O nome do usuário. */
   name: string
+  /** O discriminador do usuário. */
   discriminator: string
+  /** O avatar do usuário. */
   avatar?: string
+  /** Informações sobre as datas do usuário. */
   dates: UserDates
+  /** Os detalhes sobre o usuário. */
   details: UserDetails
+  /** A tag do usuário. */
   tag: string
   private endpoint: Users
 
@@ -43,6 +51,11 @@ export default class User {
     this.endpoint = endpoint
   }
 
+  /**
+   * Busca pelos bots do usuário.
+   *
+   * @returns {Promise<Bot[]>} Todos os bots do usuário.
+   */
   async getBots (): Promise<Bot[]> {
     return await this.endpoint.getBots(this.id)
   }

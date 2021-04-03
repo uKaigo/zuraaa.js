@@ -2,11 +2,22 @@ import { EventEmitter } from 'events'
 import { createServer, Server, IncomingMessage, ServerResponse } from 'http'
 
 interface WebhookOptions {
+  /** Um emitter adicional. */
   emitter: EventEmitter
+  /** A porta que será usada. */
   port: number
+  /** A token que será usada. */
   auth: string
 }
 
+/**
+ * Webhook do Zuraaa.
+ *
+ * @param {WebhookOptions} [options] - As configurações.
+ * @param {EventEmitter} [options.emitter] - Um emitter adicional para disparar o evento zuraaaVote
+ * @param {number} [options.port=8080] - A porta que será usada. Padrão para 8080.
+ * @param {string} [options.auth] - A token que será usada para validar o request.
+ */
 export class Webhook extends EventEmitter {
   protected _auth?: string
   protected _server: Server | null
@@ -22,6 +33,7 @@ export class Webhook extends EventEmitter {
     this._server = null
   }
 
+  /** Inicia o servidor. */
   start () {
     this._server = createServer(this._handleReq.bind(this))
     this._server.listen(this.port)
@@ -29,6 +41,7 @@ export class Webhook extends EventEmitter {
     this._server.on('error', this._handleServerError.bind(this))
   }
 
+  /** Fecha o servidor. */
   close () {
     this._server?.close()
   }
