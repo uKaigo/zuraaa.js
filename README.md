@@ -1,7 +1,14 @@
 zuraaa.js
 =========
 
+[![license](https://img.shields.io/npm/l/zuraaa.js)](https://github.com/uKaigo/zuraaa.js/blob/main/LICENSE) ![version](https://img.shields.io/badge/node->%3D%2014.0.0-brightgreen)
+
 Uma api assíncrona para consumir a api do [zuraaa.com](https://github.com/zuraaa-projects/Zuraaa.com/wiki/Rest-API)
+
+Documentação
+------------
+
+A documentação pode ser encontrada na [wiki](https://github.com/uKaigo/zuraaa.js/wiki).
 
 Como usar
 ---------
