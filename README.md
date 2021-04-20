@@ -3,6 +3,8 @@ zuraaa.js
 
 [![license](https://img.shields.io/npm/l/zuraaa.js)](https://github.com/uKaigo/zuraaa.js/blob/main/LICENSE) ![version](https://img.shields.io/badge/node->%3D%2014.0.0-brightgreen)
 
+> **NOTA:** Descontinuado pois uma [package oficial](https://github.com/zuraaa-projects/Charlotte) foi lançada.
+
 Uma api assíncrona para consumir a api do [zuraaa.com](https://github.com/zuraaa-projects/Zuraaa.com/wiki/Rest-API)
 
 Documentação
